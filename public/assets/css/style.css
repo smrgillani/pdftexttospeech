@@ -1,0 +1,710 @@
+/*========================================
+        Common
+==========================================*/
+body.main-dashboard {
+  min-height: 100vh;
+  background: url("../img/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+ .cardBox {
+    background: #3f4784;
+    padding: 20px 35px;
+    box-shadow: 0px 8px 24px 0px #0000002b;
+    border-radius: 6px;
+}
+ .cardBox h5
+{
+      border-bottom: 2px solid #252a50;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+.topBar .dropdown {
+    display: inline-block;
+    cursor: pointer;
+}
+.topBar .dropdown-menu
+{
+      background-color: #3f4784;
+          padding: 10px;
+}
+.dropdown-item:focus, .dropdown-item:hover
+{
+      background-color: #272d61;
+}
+.loader:before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000096;
+    z-index: 999;
+}
+.gooey {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 142px;
+  height: 40px;
+  margin: -20px 0 0 -71px;
+  background: transparent;
+opacity:0;
+  z-index: 99999;
+}
+.loader .gooey 
+{
+  opacity: 1 !important;
+}
+.gooey .dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 12px;
+  left: 15px;
+  /* filter: blur(4px); */
+  background: #fa6700;
+  border-radius: 50%;
+  transform: translateX(0);
+  animation: dot 2.8s infinite;
+}
+.gooey .dots {
+  transform: translateX(0);
+  margin-top: 12px;
+  margin-left: 31px;
+  animation: dots 2.8s infinite;
+}
+.gooey .dots span {
+  display: block;
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin-left: 16px;
+  /* filter: blur(4px); */
+  background: #fa6700;
+  border-radius: 50%;
+}
+@-moz-keyframes dot {
+  50% {
+    transform: translateX(96px);
+  }
+}
+@-webkit-keyframes dot {
+  50% {
+    transform: translateX(96px);
+  }
+}
+@-o-keyframes dot {
+  50% {
+    transform: translateX(96px);
+  }
+}
+@keyframes dot {
+  50% {
+    transform: translateX(96px);
+  }
+}
+@-moz-keyframes dots {
+  50% {
+    transform: translateX(-31px);
+  }
+}
+@-webkit-keyframes dots {
+  50% {
+    transform: translateX(-31px);
+  }
+}
+@-o-keyframes dots {
+  50% {
+    transform: translateX(-31px);
+  }
+}
+@keyframes dots {
+  50% {
+    transform: translateX(-31px);
+  }
+}
+[id*='Contentpage'] {
+    width: 100%;
+    background: #252a50;
+    border: none;
+}
+.select2-container
+{
+      width: 100% !important;
+}
+.select2-container--default .select2-selection--multiple
+{
+      border-radius: 4px;
+
+    color: #AAAECC !important;
+    background: transparent;
+    min-height: 50px !important;
+    border: 1px solid #AAAECC;
+}
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: solid #fa6700 2px;
+    outline: 0;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #fa6600;
+    border: 1px solid #fa6500;
+
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    color: #fff;
+    }
+    .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+
+    padding: 5px 5px;
+
+}
+/*========================================
+       inValid
+==========================================*/
+.is-invalid .form-control{
+  box-shadow: 0 0 0 0.2rem #d20000;
+  color: #d20000;
+}
+
+.is-invalid{
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.is-invalid::after{
+  display: block;
+    content: "\f071";
+    font-family: fontAwesome;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    color: #d20000;
+    top: calc(50% - 10px);
+    right: 16px;
+    text-shadow: 0px 5px 9px #d200001f;
+}
+/*========================================
+        SideBar
+==========================================*/
+
+.main-panel .sidebar {
+  width: 300px;
+  background-color: #3F4784;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: visible;
+  transition: .3s ease all;
+  z-index: 2;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.08), 0 4px 25px 0 rgba(0, 0, 0, 0), 0 8px 10px -5px rgba(0, 0, 0, 0.08);
+}
+.main-panel .sidebar .logoChangeAble
+{
+  margin:0px;
+  transition: all .3s ease;
+}
+.main-panel .sidebar .collapseIcons
+{
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    right: -25px;
+    top: 20px;
+    padding: 6px 12px;
+    background: #3f4784;
+    box-shadow: 0 0 19px 0px #0000003b;
+}
+.main-panel .sidebar .bar1,
+.main-panel .sidebar .bar2,
+.main-panel .sidebar .bar3 
+{
+  width: 35px;
+  height: 3px;
+  background-color: #fff;
+  margin: 8px 0;
+  transition: 0.4s;
+  border-radius: 10px;
+  position: relative;
+}
+.main-panel .sidebar .bar2
+{
+  left: 5px;
+}
+.main-panel .sidebar .collapseIcons:hover .bar2
+{
+left: 0px;
+}
+.main-panel .sidebar .side-nav {
+  margin-top: 80px;
+  list-style: none;
+  padding: 0px;
+}
+
+.main-panel .sidebar .side-nav li {
+    /* overflow: hidden; */
+}
+
+.main-panel .sidebar .side-nav li a {
+  color: #fff;
+  padding: 15px 75px;
+  display: flex;
+  align-items: center;
+  transition: .3s ease all;
+  background-image:none;
+}
+.main-panel .sidebar .side-nav li a:hover {
+    color: #FA6800;
+    background-image: linear-gradient(to right, #ffffff14, #3f4784);
+}
+.main-panel .sidebar .side-nav li .img-background {
+  width: 35px;
+  height: 35px;
+  display: block;
+  float: left;
+  background-size: 18px;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  margin-right: 15px;
+  background-position: center;
+    transition: .3s ease all;
+}
+
+.main-panel .sidebar .side-nav li .img-background.home {
+  background-image: url("../img/homeicon.png");
+}
+
+.main-panel .sidebar .side-nav li .img-background.book {
+  background-image: url("../img/bookicon.png");
+}
+
+.main-panel .sidebar .side-nav li .img-background.user {
+  background-image: url("../img/usericon.png");
+}
+
+.main-panel .sidebar .side-nav li .img-background.membership {
+  background-image: url("../img/membershipicon.png");
+}
+
+.main-panel .sidebar .side-nav li .img-background.packages {
+  background-image: url("../img/packages.png");
+}
+
+
+
+.main-panel .sidebar:not(.sideNavShort) .side-nav li a:hover  .img-background.home {
+  background-image: url("../img/homeiconorange.png");
+}
+
+.main-panel .sidebar:not(.sideNavShort) .side-nav li a:hover  .img-background.book {
+  background-image: url("../img/bookiconorange.png");
+}
+
+.main-panel .sidebar:not(.sideNavShort) .side-nav li a:hover  .img-background.user {
+  background-image: url("../img/usericonorange.png");
+}
+
+.main-panel .sidebar:not(.sideNavShort) .side-nav li a:hover  .img-background.membership {
+  background-image: url("../img/membershipiconorange.png");
+}
+
+
+
+.main-panel .sidebar.sideNavShort
+{
+  width: 80px;
+}
+.main-panel .sidebar.sideNavShort .side-nav li
+{
+  position: relative;
+  z-index: 999;
+}
+.main-panel .sidebar.sideNavShort .side-nav li a
+{
+  padding: 20px;
+  text-align: center;
+  /* margin: 0px; */
+  z-index: 999999;
+}
+.main-panel .sidebar.sideNavShort .side-nav li a .text
+{
+  opacity: 0;
+  position: absolute;
+  /*transition: .3s ease all;*/
+  left: 80%;
+}
+.main-panel .sidebar.sideNavShort .side-nav li a:hover
+
+{
+  color: #fff;
+      background-image: none;
+}
+.main-panel .sidebar.sideNavShort .side-nav li a:hover .text,
+.main-panel .sidebar.sideNavShort .side-nav li:hover a .text
+{
+  opacity: 1;
+}
+.main-panel .sidebar.sideNavShort .side-nav li .img-background
+{
+  margin-right: 0;
+  z-index: 99999;
+}
+.main-panel .sidebar.sideNavShort .side-nav li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 250%;
+    top: 13px;
+    height: 50px;
+    left: 10px;
+    border-radius: 50px;
+    opacity: 0;
+    background: rgba(250, 104, 0, 0.61);
+}
+.main-panel .sidebar.sideNavShort .side-nav li:hover:before
+{
+ opacity: 1;
+}
+/*========================================
+        Right Content Common
+==========================================*/
+
+
+.main-panel .content-panel {
+  float: right;
+  width: calc(100% - 300px);
+  min-height: 100vh;
+  transition: .3s ease all;
+}
+.main-panel .sidebar.sideNavShort + .content-panel
+{
+  width: calc(100% - 80px);
+}
+.main-panel .content-panel *
+{
+  color: #fff;
+}
+
+/*====================================================================================================
+        Right Content Dashboard
+======================================================================================================*/
+
+.main-panel .content-panel .pdfBox {
+    background: #3F4784;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #272D61;
+    box-shadow: 0 0 0 2px #314A7C;
+    position: relative;
+}
+.main-panel .content-panel .pdfBox:after {
+    content: "";
+    display: block;
+    width: 71%;
+    position: absolute;
+    height: 10px;
+    left: 104%;
+    background: #272d61;
+    border-top: 2px solid #314A7C;
+    border-bottom: 2px solid #314A7C;
+    /* z-index: 9; */
+}
+.main-panel .content-panel .pdfBox.noneAfter:after
+{
+  display: none;
+}
+
+.main-panel .content-panel .uploadBox
+{
+   background:#3F4784;
+   padding: 50px;
+   margin: 50px 0px;
+   border-radius: 10px;
+   box-shadow: 0 0 18px 0px #00000014;
+}
+.main-panel .content-panel .uploadBox .choosePDF
+{
+
+background: #272D61;
+
+width: 200px;
+
+height: 200px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+border-radius: 50%;
+
+flex-direction: column;
+
+
+}
+.main-panel .content-panel .uploadBox .choosePDF label{
+  text-align:center;
+  cursor:pointer;
+}
+.main-panel .content-panel .uploadBox .choosePDF #chooseFile
+{
+    position: absolute;
+    visibility: hidden;
+}
+.main-panel .content-panel .uploadBox .choosePDF p
+{
+  margin:10px 0px 0px 0px;
+}
+
+
+/*====================================================================================================
+        Right Content Single PDF
+======================================================================================================*/
+
+.main-panel .content-panel .convertTextSpeech label
+{
+      color: #EBE8E5;
+}
+
+.main-panel .content-panel .convertTextSpeech .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 19px;
+  background: #9298C5;
+  outline: none;
+  opacity: 1;
+  border: 8px solid #272D61;
+  border-radius: 40px;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.main-panel .content-panel .convertTextSpeech .slider:hover {
+  opacity: 1;
+}
+
+.main-panel .content-panel .convertTextSpeech .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width:40px;
+  height: 40px;
+  border: 0;
+  background: url('../img/slide.png') no-repeat;
+  cursor: pointer;
+}
+
+.main-panel .content-panel .convertTextSpeech .slider::-moz-range-thumb {
+  width:40px;
+  height: 40px;
+  border: 0;
+  background: url('../img/slide.png') no-repeat;
+  cursor: pointer;
+}
+
+.main-panel .content-panel .convertTextSpeech .rangeValue
+{
+      position: absolute;
+    left: 0px;
+        top: 35px;
+
+    transition: opacity .3s ease;
+}
+
+
+
+
+
+
+
+
+.main-panel .content-panel .bookPages  ul.nav {
+    border: 1px solid #747AA7;
+    border-radius: 5px;
+        max-height: 520px;
+    overflow: auto;
+}
+.main-panel .content-panel .bookPages ul.nav .nav-item
+{
+  width: 100%;
+}
+.main-panel .content-panel .bookPages ul.nav .nav-item:first-child .nav-link
+{
+     border-radius: 6px 6px 0px 0px;
+}
+.main-panel .content-panel .bookPages ul.nav .nav-item:last-child .nav-link
+{
+     border-radius: 0px 0px 6px 6px;
+}
+.main-panel .content-panel .bookPages ul.nav .nav-item .nav-link {
+    text-align: center;
+    font-size: 15px;
+    padding: 15px 0px;
+    color: #AAAECC;
+
+    border-radius: 0px;
+}
+.main-panel .content-panel .bookPages ul.nav .nav-item:not(:last-child) .nav-link
+{
+      border-bottom: 1px solid #747aa7;
+}
+.main-panel .content-panel .bookPages  ul.nav .nav-link.active, .main-panel .content-panel .bookPages  ul.nav .show>.nav-link {
+    color: #fff;
+    background-color: #252a50;
+    border-radius: 0px;
+}
+
+.main-panel .content-panel .bookPages .pageContentBox {
+    background: #252a50;
+
+    border: 1px solid #747AA7;
+    border-radius: 6px;
+
+    padding: 15px 25px;
+    margin-top: 30px;
+    font-size: 15px;
+    
+    max-height: 450px;
+    overflow: auto;
+}
+.main-panel .content-panel .bookPages .pageContentBox p
+{
+color: #AAAECC !important;
+}
+
+
+
+
+
+
+
+@media (max-width: 1220px)
+{
+  .main-panel .content-panel
+  {
+    width: calc(100% - 80px);
+  }
+  .main-panel .sidebar:not(.sideNavShort) + .content-panel:after
+  {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background: #00000099;
+  }
+
+}
+
+
+@media (max-width: 992px)
+{
+.main-panel .content-panel .pdfBox:after
+{
+  display: none;
+}
+.main-panel .content-panel .pdfBoxMain
+{
+  justify-content: center !important;
+}
+.main-panel .content-panel .uploadBox {
+
+    padding: 50px 0px;
+    text-align: center;
+
+}
+.main-panel .content-panel .uploadBox .choosePDF
+{
+  margin-right: 0px !important;
+  margin-bottom: 20px;
+}
+.main-panel  .content-panel .audioBox .d-flex
+{
+  flex-direction: column;
+}
+.main-panel  .content-panel .audioBox 
+{
+  padding-bottom: 120px;
+}
+.player {
+
+    margin: 40px 0px 10px 0px !important;
+}
+}
+
+@media (max-width: 768px)
+{
+.main-panel .sidebar.sideNavShort {
+    width: 40px;
+}
+.main-panel  .content-panel {
+    width: calc(100% - 40px) !important;
+}
+.main-panel .sidebar.sideNavShort .logoChangeAble{
+      width: 35px;
+}
+.main-panel .sidebar .collapseIcons
+{
+  right: -25px !important;
+}
+.main-panel .sidebar.sideNavShort .side-nav li a {
+    padding: 15px 5px;
+  
+}
+.main-panel .sidebar.sideNavShort .side-nav li .img-background
+{
+      background-size: 20px;
+}
+.main-panel .sidebar.sideNavShort .side-nav li:before {
+
+    width: 310%;
+    top: 14px;
+    height: 37px;
+    left: 2px;
+    border-radius: 50px;
+    
+}
+.main-panel .sidebar.sideNavShort .side-nav li a .text {
+    font-size: 13px;
+
+    left: 100%;
+}
+.container.pl-5.pr-5,
+.container-fluid.pl-5.pr-5.topBar {
+    padding: 0px 20px !important;
+}
+.form-group.d-flex {
+    flex-wrap: wrap;
+}
+.form-group.d-flex .themeBtn 
+{
+  width: 100%;
+  margin-top: 20px;
+}
+.main-panel .content-panel .convertTextSpeech .slider
+{
+      margin-bottom: 60px;
+}
+.main-panel .content-panel .tab-content
+{
+    padding-top: 50px;
+}
+.main-panel .content-panel .bookPages ul.nav {
+
+    max-height: 220px;
+
+}
+}

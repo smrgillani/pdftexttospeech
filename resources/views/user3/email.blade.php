@@ -1,0 +1,1 @@
+<a href="{{ url($link)}}">Click Here to register in system</a>

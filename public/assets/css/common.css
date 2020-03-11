@@ -1,0 +1,748 @@
+/*=================================================================================================
+===================================================================================================
+===================================================================================================
+==========================================Tumarms CSS==============================================
+===================================================================================================
+===================================================================================================
+===================================================================================================*/
+
+
+
+
+
+
+/*=================================================================================================
+=============================================common_classes========================================
+===================================================================================================*/
+.form-control:disabled, .form-control[readonly] {
+    background-color: initial;
+    opacity: 1;
+}
+#closePlayer
+{
+  position: absolute;
+    right: -3px;
+    padding: 10px 11px;
+    top: -26px;
+    border: 4px solid #909090;
+
+}
+
+*:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+.newThemeBtnStyle 
+{
+    background: #FA6800;
+    transition: .3s ease all;
+    opacity: .75;
+}
+.newThemeBtnStyle:hover
+{
+   background: #FA6800;
+   transition: .3s ease all;
+   opacity: 1 !important;
+}
+.downloadIcon 
+{
+  text-align: right;
+}
+.downloadIcon .fa
+{
+  background: #3e4784;
+    border: 4px solid #24295b;
+    font-size: 18px;
+    border-radius: 50%;
+    padding: 10px;
+    color: #9297c5;
+    cursor: pointer;
+}
+body {
+  -webkit-print-color-adjust: exact;
+  font-family: 'Poppins', sans-serif;
+}
+
+.input-group .form-control {
+  z-index: 1;
+}
+
+.putDotsLongText {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.textTransformUpper {
+  text-transform: uppercase;
+}
+
+.allUnset
+{
+      all: unset;
+    /* overflow: hidden; */
+    display: block;
+}
+.btn:focus
+{
+  outline: none;
+}
+.themeBtn
+{
+  background: #FA6800;
+  transition: .3s ease all;
+}
+.greenBtn
+{
+  background: #0AC517;
+  transition: .3s ease all;
+}
+.btn:hover
+{
+  opacity: .75;
+}
+.w-70
+{
+  width: 70%;
+}
+.progress {
+
+    height: 1.5rem;
+    font-size: .75rem;
+    background-color: #272D61;
+    border-radius: 9px;
+}
+.progress-bar
+{
+      background-color: #0AC517;
+}
+.form-control {
+    color: #AAAECC !important;
+    background: transparent;
+    height: 50px !important;
+    border: 1px solid #AAAECC;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: transparent;
+    border-color: #3f4784;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(250, 104, 0);
+}
+ .form-control option
+ {
+  background: #3f4784;
+ }
+ ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #AAAECC !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #AAAECC !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #AAAECC !important;
+}
+ .p-relative
+ {
+  position: relative !important;
+ }
+ .modal-content
+ {
+      background-color: #3f4784;
+      border:none;
+ }
+  .modal-content *
+  {
+    color: #fff;
+  }
+  .modal-header
+  {
+        border-bottom: 2px solid #252a50;
+
+  }
+  .modal-footer
+  {
+    border:none;
+  }
+  .modal-body {
+
+    padding: 1rem 3rem;
+}
+  .close
+  {
+    opacity: 1;
+  }
+  .max-height-270
+  {
+        max-height: 270px;
+    overflow: auto;
+  }
+
+  /* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+
+  -webkit-text-fill-color: #AAAECC;
+
+}
+input
+{
+  caret-color: #FA6800;
+}
+.layoutFixed
+{
+      table-layout: fixed;
+}
+.pt-12px
+{
+  padding-top: 12px;
+}
+/*=============================================================
+===================Anchor Tags Width===========================
+================================================================*/
+a {
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+a.anchorTagsLinks {
+  color: #428bca;
+}
+
+.textUnderline
+{
+      text-decoration: underline;
+}
+
+.pointer{
+  cursor:pointer;
+}
+
+ 
+/*=============================================================
+===========================Margins Related=====================
+================================================================*/
+.marginAuto {
+  margin: auto;
+}
+.marginTop10 {
+  margin-top: 10px;
+}
+.marginTop0 {
+  margin-top: 0px;
+}
+.marginInitial {
+  margin: initial;
+}
+
+/*=============================================================
+===========================All Spaces==========================
+================================================================*/
+.space30 {
+  height: 30px;
+}
+
+.space20 {
+  height: 20px;
+}
+
+.space10 {
+  height: 10px;
+}
+
+.space15 {
+  height: 15px;
+}
+
+.space5 {
+  height: 5px;
+}
+
+.space25 {
+  height: 25px;
+}
+
+.space35 {
+  height: 35px;
+}
+
+.space40 {
+  height: 40px;
+}
+
+.space50 {
+  height: 50px;
+}
+
+.space60 {
+  height: 60px;
+}
+
+.space65 {
+  height: 65px;
+}
+.space70 {
+  height: 70px;
+}
+.space75 {
+  height: 75px;
+}
+
+.space80 {
+  height: 80px;
+}
+
+.space90 {
+  height: 90px;
+}
+
+.space95 {
+  height: 95px;
+}
+
+.space100 {
+  height: 100px;
+}
+
+.space250 {
+  height: 250px;
+}
+
+/*=============================================================
+===========================All Widths==========================
+================================================================*/
+.widthFull {
+  width: 100%;
+}
+
+.widthHalf {
+  width: 50%;
+}
+
+.width100 {
+  width: 100px;
+}
+
+.width200 {
+  width: 200px;
+}
+
+.width150 {
+  width: 150px;
+}
+
+
+.widthInitial {
+  width: initial;
+}
+
+/*=============================================================
+===========================Font Sizes==========================
+================================================================*/
+.fontSize18 {
+  font-size: 18px;
+}
+
+.fontSize15 {
+  font-size: 15px;
+}
+
+.fontSize22 {
+  font-size: 22px;
+}
+.fontSize30
+{
+  font-size: 30px;
+}
+
+.fontSize16 {
+  font-size: 16px;
+}
+
+.fontSize17 {
+  font-size: 17px;
+}
+
+.fontSize24 {
+  font-size: 24px;
+}
+
+.fontSize20 {
+  font-size: 20px;
+}
+
+.fontSize10 {
+  font-size: 10px;
+}
+
+.fontSize12 {
+  font-size: 12px;
+}
+
+/*=============================================================
+==========================Font Width===========================
+================================================================*/
+.fontWeight100 {
+  font-weight: 100;
+}
+
+.fontWeight200 {
+  font-weight: 200;
+}
+
+.fontWeight300 {
+  font-weight: 300;
+}
+
+.fontWeight400 {
+  font-weight: 400;
+}
+
+.fontWeight500 {
+  font-weight: 500;
+}
+
+.fontWeight600 {
+  font-weight: 600;
+}
+
+.fontWeight700 {
+  font-weight: 700;
+}
+
+/*=============================================================
+===========================Heights=============================
+================================================================*/
+.heightInitial {
+  height: initial;
+}
+.height50 {
+  height: 50px;
+}
+.height45 {
+  height: 45px;
+}
+
+/*=============================================================
+=============================Paddings==========================
+================================================================*/
+.padding25 {
+  padding: 25px !important;
+}
+
+
+
+.paddingRight15 {
+  padding-right: 15px;
+}
+.paddingLeft40 {
+  padding-left: 40px;
+}
+.paddingLeftRight32 {
+  padding: 0px 32px;
+}
+.paddingLeftRight30 {
+  padding: 0px 30px;
+}
+
+.paddingRight10 {
+  padding-right: 10px;
+}
+
+.paddingRight5 {
+  padding-right: 5px;
+}
+
+.noPadding {
+  padding: 0px;
+}
+
+.noPaddingRight {
+  padding-right: 0px;
+}
+
+.noPaddingLeft {
+  padding-left: 0px;
+}
+
+.paddingLeftRight25 {
+  padding: 0px 25px;
+}
+
+.paddingLeftRight10 {
+  padding: 0px 10px;
+}
+.paddingLeftRight15 {
+  padding: 0px 15px;
+}
+
+.paddingTopBottom10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.paddingTopBottom20 {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+.paddingTopBottom40 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.paddingTop10 {
+  padding-top: 10px;
+}
+
+.paddingTop5 {
+  padding-top: 5px;
+}
+.paddingLeft50px {
+  padding-left: 50px;
+}
+/*=============================================================
+==========================Colors ==============================
+================================================================*/
+.colorWhite {
+  color: #fff;
+}
+
+.bgWhite {
+  background: #fff;
+}
+
+.colorBlack {
+  color: #fff;
+}
+
+.bgBlack {
+  background: #fff;
+}
+.bgRed
+{
+  background: red;
+}
+.colorRed {
+  color: red;
+}
+.colorGrey {
+  color: #9B9A99;
+}
+.colorGreyDark {
+  color: #A6A8B9 !important;
+}
+/*=============================================================
+============================Ul> lists==========================
+================================================================*/
+.list-inline {
+  margin-left: 0px;
+}
+
+.listStyleNone {
+  list-style: none;
+}
+
+/*=============================================================
+========================All Input Fields=======================
+================================================================*/
+input [type="search"],
+input [type="search"]:active {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+
+input[type="number"]{-moz-appearance:textfield}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{-webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;margin:0}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #fff;
+  font-size: 15px;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #fff;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #fff;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #fff;
+}
+
+/*=============================================================
+==========================All Displays=========================
+================================================================*/
+.displayInlineBlock {
+  display: inline-block;
+}
+
+.displayBlock {
+  display: block;
+}
+
+.displayFlex {
+  display: flex;
+}
+.displayNone {
+  display: none;
+}
+
+hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-top: 1px solid #e1e1e3;
+}
+
+
+/*=================================================================================================
+=============================================tables_things=======================================
+===================================================================================================*/
+.table-responsive {
+  border: none;
+}
+.table td {
+    padding: 20px;
+    background: #3F4784;
+    font-size: 16px;
+    color: #AAAECC !important;
+    border-top: none;
+    border-bottom: 2px solid #252A50;
+}
+.table tbody
+{
+      box-shadow: 0px 8px 24px 0px #0000002b;
+}
+.table tbody tr:first-child td:first-child
+{
+      border-radius: 6px 0px 0px 0px;
+}
+.table tbody tr:first-child td:last-child
+{
+      border-radius:  0px 6px 0px 0px;
+}
+.table tbody tr:last-child td:first-child
+{
+      border-radius:  0px 0px 0px 6px;
+}
+.table tbody tr:last-child td:last-child
+{
+      border-radius:  0px 0px 6px 0px;
+}
+.table tbody tr:last-child td
+{
+border-bottom: 2px solid transparent;
+}
+
+.table tbody#chapterBody tr:last-child td
+{
+    border-bottom: 2px solid #252A50;
+}
+.table th {
+    border: none !important;
+}
+
+
+.list-inline li {
+    display: inline-block;
+}
+
+/*=================================================================================================
+============================All scroll Bar for website=============================================
+===================================================================================================*/
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar
+{
+      height: 5px;
+  width: 5px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  background-color: #fa6800;
+  /* background-image: -webkit-linear-gradient(top, #f46604 0%, #212529 50%, #212529 51%, rgb(33, 37, 41) 100%); */
+}
+/*=================================================================================================
+=============================================Media_Queries=========================================
+===================================================================================================*/
+@media only screen and (min-width: 1200px) {
+.paddingLeftRight50 {
+  padding: 0px 50px;
+}
+
+}
+@media only screen and (max-width: 768px) {
+  .text-right-hidden-xs {
+    text-align: left;
+  }
+  .widthFullXs {
+    width: 100%;
+  }
+  .noPaddingOnxs {
+    padding: 0px;
+  }
+  .fontSizeFifteenOnxs {
+    font-size: 15px;
+  }
+  .paddingrightOnxs {
+    padding-right: 15px;
+  }
+  .paddingleftOnxs {
+    padding-left: 0px;
+  }
+  
+}
+@media only screen and (min-width: 992px)
+{
+  .paddingLeftRight70 {
+  padding: 0px 70px;
+}
+}
+@media only screen and (max-width: 992px)
+{
+  .textCenterXsMd
+  {
+    text-align: center;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hazel-freehold-246621",
+  "private_key_id": "45844765848ce16c1ed70c8e7839fe0ccf7b0f9e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDSpa8/k+a4YC1I\nckBXu4t6gK9gFz/NsAxVKuhdmDFmCUmk/NLXWeJtsc5dbTmEAL/gV02QGicJz5Xo\nWp5SMpO7x6lvOHF7LLvBDfEEQZ3kPR/O9xDfsntzeMLEoJkVh/b39wJv7LwwbiYe\n9T/lJrvks89R1ES5PQiASurjr8UrpNIySw4sat+c5iW+UXtk9Ry/9Lyg9oMOm1RT\nk+pyxtCAIZ43OblCq+fPLyYIuurCpu2DHiQsh4f196Chd8wAvv9//hOg3qT4Xn/8\n2zIyXFErMY6gl6W+gPVpOd43BmdWsa72HwtlTf6E8lGexjEDoVFWRwct+q7waEkq\niey9EOJ9AgMBAAECggEAANpBUZNOa4AeJs0plAFTEPGc5Blr/W/hOOYFzz0qtARF\nG0kXrF31g+aklG24/h8Hp8eKrZLhhhFkRK67Nc91GB04gxX6JZq6fs9I4rDGTBJw\nQsTuuU0OYVsDhMq2m+bzObEy/hN59oM3ncf11H5Z49TTebwPdCV6V5SWC0pelKzh\n9wV6+npgIAIkn3vSibmYgq6m2qhJo18lsMNFG0JNVkcf7OZYrYge/RccGL8fq04C\nY0kxOjgh3z5lVtKFN4kstM+ZOop+6mliuH/8byMPmuwK6YQNRQ3HygDAdGBgcXeR\nwz50Oyx1KbCYbHA5gTJbIi41pDWpa4P03t9r8s6sSQKBgQD8X9XyKlu9W6uzzDmA\nMNjv9DOt/pyLfLxhWpUKCb7AExSBP+G63lC6BPeceW6/jERF4xQMhlnn4QcvUVH4\nqIjJVB/8NEjUNQ1b1f9u9EBeVaTUfeNC9xV236XO8Dh6mUdlecaugACVU5qhtwoS\n/DbaiXZTJMqBZuwrv61G71uo1QKBgQDVrGNBNKDEv+JAHorPfF2TjhIXvu1YpxHM\nshjR58rtXOwaSddQyWfyeM9dTXTJFG8D/g/eyr9Fer4tD56repQT7FuFEpyc+gnV\n2HvLz12Vtz8xwULy9qmnw7AW37LVfH+KFo5vHCHljUNPXCGCuCsruefMADWaLx+S\nmphL02GnCQKBgHzVZr1XaHN8way46wRWpSfj8iAxnft9Iq1BIhGKCnl1tqHMGHrX\ndrTcuiIDCt3iou6yyPr9BcGl1Gj6X4KQ0sBLRVr5/cBB0a7IZoXaeXBwCo01C9HW\n6B4ZuClpN3alFOTD3Jv6Is+6P/WX1XrYmMV2UzoDK8vgPhfRwwMgaIVVAoGBAI8C\nNOAUcDGe17fgeTlLXHoAkV1xPPujvgcJgBElGS1qjt89Yq3ATyD6+JbS24IlefPr\nHAYaHpBLCXOxS5orjWYUQGC9RzLNKr4EiT6siE9G+TW8yqlAq+YL1BRLHi9Chz4N\nwMDezFUOCenYmNkbmFFIuLpRvY53UaNWcu31CRu5AoGBAOMXaE1+k2vwCUoP6CQ/\nOeIpDSqWx5TeSK5eI3qoEtCFKjIfHXc1l+OmU2TWihY8SBTKzTHNEjkIY9ePFeMu\nrIuk6OCxNzjJSWkCKrJQ2ytdG1J2Cx0LRMKxhAF9XIN8j06t22u4D/fPRh3eP2+p\nMRe/6YJBCqs+ubM3p3OYPiyE\n-----END PRIVATE KEY-----\n",
+  "client_email": "texttospeech@hazel-freehold-246621.iam.gserviceaccount.com",
+  "client_id": "117927498759445658232",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/texttospeech%40hazel-freehold-246621.iam.gserviceaccount.com"
+}

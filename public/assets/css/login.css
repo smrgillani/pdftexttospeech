@@ -1,0 +1,71 @@
+/*========================================
+				Login
+==========================================*/
+
+body
+{
+	min-height: 100vh;
+	background: url("../img/loginBg.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.login
+{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.loginBox
+{
+	max-width: 450px;
+	margin: auto;
+	background: #131736;
+	padding: 50px;
+	border-radius: 8px;
+	margin-bottom: 70px;
+}
+.loginBox .form-control
+{
+
+   
+ 
+    color: #9B9A99;
+    background-color: #272C52;
+ 
+    border: 1px solid #70707063;
+    min-height: 45px;
+    border-radius: 4px;
+   
+}
+
+.loginBox .form-control:focus {
+
+    box-shadow: 0 0 0 0.2rem rgb(250, 104, 0);
+}
+
+.is-invalid .form-control{
+	box-shadow: 0 0 0 0.2rem #d20000;
+	color: #d20000;
+}
+
+.is-invalid{
+	position: relative;
+	width: 100%;
+	display: block;
+}
+
+.is-invalid::after{
+	display: block;
+    content: "\f071";
+    font-family: fontAwesome;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    color: #d20000;
+    top: calc(50% - 10px);
+    right: 16px;
+    text-shadow: 0px 5px 9px #d200001f;
+}
+

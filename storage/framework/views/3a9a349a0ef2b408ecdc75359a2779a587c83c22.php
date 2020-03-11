@@ -9,6 +9,7 @@
                <img src="<?php echo e(asset('assets/img/logo.png')); ?>" class="logoChangeAble">
             </div>
             <ul class="side-nav">
+               <?php if(auth()->guard()->check()): ?>
                 <?php if(auth()->user()->isAdmin== 1||auth()->user()->isSubscriber()): ?>
                <li>
                   <a href="<?php echo e(route('home')); ?>">
@@ -45,6 +46,7 @@
                </li>
                <?php endif; ?>
                <?php endif; ?>
+
                <?php if(auth()->user()->isAdmin==1): ?>
             <li>
                   <a href="<?php echo e(route('Packages')); ?>">
@@ -74,6 +76,7 @@
                      </span>
                   </a>
                </li>
+            <?php endif; ?>
             <?php endif; ?>
       </div>
 <?php /**PATH /home/sarmad/Work/FreelanceWork/PhpProjects/AudioBot/html/resources/views/common/sidebar.blade.php ENDPATH**/ ?>

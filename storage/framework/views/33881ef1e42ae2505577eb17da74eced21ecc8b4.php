@@ -110,8 +110,8 @@
                             <input type="hidden" name="categories" id="categories" value="EBOOK">
                             <input type="hidden" name="duration" id="duration" value="30">
                             <input type="hidden" name="frequency" id="frequency" value="MONTHLY">
-                            <input type="hidden" name="pitchPage" id="pitchPage" value="http://local.audiobot.com/orders/create">
-                            <input type="hidden" name="thankYouPage" id="thankYouPage" value="http://local.audiobot.com/orders/create">
+                            <input type="hidden" name="pitchPage" id="pitchPage" value="http://local.audiobot.com/selfRegister">
+                            <input type="hidden" name="thankYouPage" id="thankYouPage" value="http://local.audiobot.com/selfRegister">
                             <input type="hidden" name="trialPeriod" id="trialPeriod" value="0">
                             <input type="hidden" name="digital" id="digital" value="true">
                             <input type="hidden" name="physical" id="physical" value="false">

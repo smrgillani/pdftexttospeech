@@ -9,6 +9,7 @@
                <img src="{{asset('assets/img/logo.png')}}" class="logoChangeAble">
             </div>
             <ul class="side-nav">
+               @auth
                 @if(auth()->user()->isAdmin== 1||auth()->user()->isSubscriber())
                <li>
                   <a href="{{ route('home') }}">
@@ -45,6 +46,7 @@
                </li>
                @endif
                @endif
+
                @if(auth()->user()->isAdmin==1)
             <li>
                   <a href="{{ route('Packages') }}">
@@ -75,4 +77,5 @@
                   </a>
                </li>
             @endif
+            @endauth
       </div>

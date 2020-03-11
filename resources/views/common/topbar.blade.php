@@ -9,15 +9,17 @@
                         </li>
                         <li>
                            <p class="m-0">
-                           {{ Auth::user()->name }}
+                           @auth{{ Auth::user()->name }}@endauth
                            </p>
                         </li>
                      </ul>
+                     @auth
                       <div class="dropdown-menu  dropdown-menu-right">
                         <a class="dropdown-item" href="{{ route('home') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
                        
                       </div>
+                      @endauth
                     </div>
                      
                   </div>

@@ -9,16 +9,17 @@
                         </li>
                         <li>
                            <p class="m-0">
-                           <?php echo e(Auth::user()->name); ?>
-
+                           <?php if(auth()->guard()->check()): ?><?php echo e(Auth::user()->name); ?><?php endif; ?>
                            </p>
                         </li>
                      </ul>
+                     <?php if(auth()->guard()->check()): ?>
                       <div class="dropdown-menu  dropdown-menu-right">
                         <a class="dropdown-item" href="<?php echo e(route('home')); ?>" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
                        
                       </div>
+                      <?php endif; ?>
                     </div>
                      
                   </div>

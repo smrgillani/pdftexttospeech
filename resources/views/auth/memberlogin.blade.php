@@ -13,7 +13,7 @@
               <div class="text-center">
               <h3 style="color: #fff">Private Acces Only</h3>
 				<a style="text-decoration: underline;" href="{{ route('login') }}" class="colorGrey">Member Login</a><br>
-				<a style="text-decoration: underline;" href="{{ route('user.register') }}" class="colorGrey">Create Account</a>
+				<a style="text-decoration: underline;" href="{{ route('Packages') }}" class="colorGrey">Subscribe/Register</a>
               </div>
    					</div>
    				</div>

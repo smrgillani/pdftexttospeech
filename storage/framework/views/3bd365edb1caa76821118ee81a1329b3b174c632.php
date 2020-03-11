@@ -22,6 +22,7 @@
                     <form method="POST" action="
 
                     <?php if(request()->route()->getName()=='user.register'): ?>
+
                     <?php echo e(route('auth.register')); ?>
 
 
@@ -33,6 +34,10 @@
 
                     ">
                         <?php echo csrf_field(); ?>
+                         <?php if(request()->route()->getName()=='user.register'): ?>
+                            <input type='hidden' value='<?php echo e(request()->item); ?>' name='item'>
+                            <input type='hidden' value='<?php echo e(request()->cbreceipt); ?>' name='cbreceipt'>
+                         <?php endif; ?>
                         <input type="hidden" name="redirect" value="<?php echo e($link); ?>">
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Name')); ?></label>

@@ -15,20 +15,21 @@ class PackagesController extends Controller
     public function __construct(Helper $helper)
     {
         $this->helper = $helper;
-        $this->middleware('auth');
+        $this->middleware('auth')->except('ListPackages');
     }
 
     public function ListPackages()
     {
         // display the list of packages for client
 
-     
+        if (auth()->user()) {
 
-        if (auth()->user() && auth()->user()->isAdmin == 1) {
-               $data = Package::all();
-            return view('packages.PackagesAdminPage', ["data" => $data]);
+            if (auth()->user() && auth()->user()->isAdmin == 1) {
+                $data = Package::all();
+                return view('packages.PackagesAdminPage', ["data" => $data]);
+            }
         } else {
-               $data = Membership::all();
+            $data = Membership::all();
             return view('packages.packagesList', ['data' => $data]);
         }
 
@@ -119,8 +120,7 @@ class PackagesController extends Controller
         }
 
         $package = Package::create($data);
-        return view('ajax.package',["package"=>$package]);//Return Single Package To Be Display Via Ajax
-     
+        return view('ajax.package', ["package" => $package]); //Return Single Package To Be Display Via Ajax
 
     }
     public function UpdatePackageToDb()

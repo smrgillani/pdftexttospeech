@@ -22,6 +22,7 @@
                     <form method="POST" action="
 
                     @if(request()->route()->getName()=='user.register')
+
                     {{ route('auth.register') }}
 
                     @else
@@ -31,6 +32,10 @@
 
                     ">
                         @csrf
+                         @if(request()->route()->getName()=='user.register')
+                            <input type='hidden' value='{{request()->item}}' name='item'>
+                            <input type='hidden' value='{{request()->cbreceipt}}' name='cbreceipt'>
+                         @endif
                         <input type="hidden" name="redirect" value="{{$link}}">
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>

@@ -30,6 +30,7 @@ class PackagesController extends Controller
             }
         } else {
             $data = Membership::all();
+            return view('packages.packages',['data' => $data]);
             return view('packages.packagesList', ['data' => $data]);
         }
 

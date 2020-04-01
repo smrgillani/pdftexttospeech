@@ -1,0 +1,201 @@
+/******************* Pricing Table Demo - 10 *****************/
+
+body.pricing-page {
+	background: url(../img/mubeen.png);
+	background-size: cover;
+}
+
+#pricing-table {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+}
+
+#pricing-table .pricing-logo {
+	text-align: center;
+	margin-bottom: 70px;
+}
+
+
+
+#pricing-table .pricingTable10 {
+	text-align: center;
+	transition: .5s;
+}
+
+#pricing-table .pricingTable10:hover {
+	transform: scale(1.02);
+	box-shadow: 0px 0px 16px 0px #ffffff57;
+}
+
+#pricing-table .pricingTable10 .pricingTable-header {
+	padding: 30px 0;
+	background-image: linear-gradient(to bottom right, #8d2b96, #437eb6);
+	ansition: all .3s ease 0s;
+}
+
+#pricing-table .pricingTable10:hover .pricingTable-header {
+	background: #09b2c6;
+	background-image: linear-gradient(to bottom right, #09b1c5, #252a4e);
+}
+
+#pricing-table .pricingTable10 .pricingTable-header:after,
+#pricing-table .pricingTable10 .pricingTable-header:before {
+	content: "";
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	border: 1px solid #d9d9d8;
+	position: absolute;
+	bottom: 12px
+}
+
+#pricing-table .pricingTable10 .pricingTable-header:before {
+	left: 40px
+}
+
+#pricing-table .pricingTable10 .pricingTable-header:after {
+	right: 40px
+}
+
+#pricing-table .pricingTable10 .heading {
+	font-size: 20px;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 0
+}
+
+#pricing-table .pricingTable10 .price-value {
+	display: inline-block;
+	position: relative;
+	font-size: 55px;
+	font-weight: 700;
+	color: #ffffff;
+	transition: all .3s ease 0s;
+}
+
+#pricing-table .pricingTable10:hover .price-value {
+	color: #fff
+}
+
+#pricing-table .pricingTable10 .currency {
+	font-size: 30px;
+	font-weight: 700;
+	position: absolute;
+	top: 6px;
+	left: -19px
+}
+
+#pricing-table .pricingTable10 .month {
+	font-size: 16px;
+	color: #fff;
+	position: absolute;
+	bottom: 15px;
+	right: -30px;
+	text-transform: uppercase
+}
+
+#pricing-table .pricingTable10 .pricing-content {
+	padding-top: 50px;
+	background: #fff;
+	position: relative;
+}
+
+#pricing-table .pricingTable10 .pricing-content:after,
+#pricing-table .pricingTable10 .pricing-content:before {
+	content: "";
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	border: 1px solid #7c7c7c;
+	position: absolute;
+	top: 12px
+}
+
+#pricing-table .pricingTable10 .pricing-content:before {
+	left: 40px
+}
+
+#pricing-table .pricingTable10 .pricing-content:after {
+	right: 40px
+}
+
+#pricing-table .pricingTable10 .pricing-content ul {
+	padding: 0 20px;
+	margin: 0;
+	list-style: none
+}
+
+#pricing-table .pricingTable10 .pricing-content ul:after,
+#pricing-table .pricingTable10 .pricing-content ul:before {
+	content: "";
+	width: 8px;
+	height: 46px;
+	border-radius: 3px;
+	background: linear-gradient(to bottom, #818282 50%, #727373 50%);
+	position: absolute;
+	top: -22px;
+	z-index: 1;
+	box-shadow: 0 0 5px #707070;
+	transition: all .3s ease 0s
+}
+
+#pricing-table .pricingTable10:hover .pricing-content ul:after,
+#pricing-table .pricingTable10:hover .pricing-content ul:before {
+	background: linear-gradient(to bottom, #40c4db 50%, #34bacc 50%)
+}
+
+#pricing-table .pricingTable10 .pricing-content ul:before {
+	left: 44px
+}
+
+#pricing-table .pricingTable10 .pricing-content ul:after {
+	right: 44px
+}
+
+#pricing-table .pricingTable10 .pricing-content ul li {
+	font-size: 15px;
+	font-weight: 700;
+	color: #777473;
+	padding: 10px 0;
+	border-bottom: 1px solid #d9d9d8
+}
+
+#pricing-table .pricingTable10 .pricing-content ul li:last-child {
+	border-bottom: none
+}
+
+#pricing-table .pricingTable10 .read {
+	display: inline-block;
+	font-size: 16px;
+	color: #fff;
+	text-transform: uppercase;
+	background-image: linear-gradient(to bottom right, #8d2b96d1, #437eb6);
+	padding: 8px 25px;
+	margin: 30px 0;
+	transition: all .3s ease 0s;
+	border-radius: 8px;
+}
+
+#pricing-table .pricingTable10 .read:hover {
+	text-decoration: none
+}
+
+#pricing-table .pricingTable10:hover .read {
+	background: #09b1c5
+}
+
+@media screen and (max-width:990px) {
+	#pricing-table .pricingTable10 {
+		margin-bottom: 25px
+	}
+}

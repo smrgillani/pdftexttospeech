@@ -81,8 +81,8 @@ class PackagesController extends Controller
         $data = DB::table('subscribe_package')
             ->join('users', 'subscribe_package.user_id', '=', 'users.id')
             ->join('packages', 'subscribe_package.package_id', '=', 'packages.Id')
-            ->select('users.status', 'users.email', 'packages.Name', 'users.name', 'users.id as user_id', 'packages.Id as package_id', 'subscribe_package.id', 'subscribe_package.subscribe_time')
-            ->where('packages.Deleted', 0)
+            ->select('users.status', 'users.email', 'packages.title', 'users.name', 'users.id as user_id', 'packages.Id as package_id', 'subscribe_package.id', 'subscribe_package.subscribe_time')
+            ->where('packages.deleted_at',null)
             ->get();
 
         return view('packages.ViewSubscribers', ['data' => $data]);

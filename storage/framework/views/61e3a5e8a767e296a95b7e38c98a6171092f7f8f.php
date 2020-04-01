@@ -38,7 +38,7 @@
                           <tr>
                             <!-- <td><?php echo e($membership->package->title); ?></td> -->
 
-                            <td><?php echo e($membership->price); ?></td>
+                            <td><?php echo e($membership->package->price); ?></td>
 
                             <td><?php echo e($membership->voice_type); ?></td>
 
@@ -134,11 +134,11 @@
 
                                 </select>
                             </div>
-
+<!-- 
                   <div class="form-group">
                                 <label>Price</label>
                                <input type="number" name="price" id="editprice" min="0" placeholder="Price" class="form-control" required>
-                              </div>
+                              </div> -->
 
                   <div class="form-group">
                                 <label>Length</label>
@@ -227,10 +227,10 @@
 
                               </div>
 
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                                 <label>Price</label>
                                <input type="number" name="price" id="price" min="0" placeholder="Price" class="form-control" required>
-                              </div>
+                              </div> -->
 
                   <div class="form-group">
                                 <label>Length</label>
@@ -576,7 +576,7 @@
 
         var voices = $("#voices").val();
 
-        var price = $("#price").val();
+        var price = "123";
         var package = $("#package").val();
 
 
@@ -662,7 +662,7 @@
 
         var voices = $("#editvoices").val();
 
-        var price = $("#editprice").val();
+        var price = "123";
 
         var status = $("#status").val();
 

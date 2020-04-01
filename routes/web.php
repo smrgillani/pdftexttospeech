@@ -12,6 +12,8 @@
  */
 use Illuminate\Support\Facades\Artisan;
 
+Route::get('/package', 'PackagesController@ListPackages')->name('Packages');
+
 Route::get('/', function () {
     if(auth()->user())
     {
@@ -125,5 +127,3 @@ Route::group(["middleware" => "isSubsriber"], function () {
     Route::get('/SubscribePackage/{id?}', 'PackagesLoginPageController@SubscribePackage')->name('SubscribePackage');
 
 });
-
-Route::get('/packages', 'PackagesController@ListPackages')->name('Packages');

@@ -294,8 +294,12 @@ left: 0px;
 }
 
 .main-panel .sidebar .side-nav li .img-background.packages {
-  background-image: url("../img/packages.png");
+  background-image: url("../img/package.png");
 }
+.main-panel .sidebar .side-nav li .img-background.order {
+  background-image: url("../img/order.png");
+}
+
 
 
 
@@ -313,6 +317,13 @@ left: 0px;
 
 .main-panel .sidebar:not(.sideNavShort) .side-nav li a:hover  .img-background.membership {
   background-image: url("../img/membershipiconorange.png");
+}
+.main-panel .sidebar:not(.sideNavShort) .side-nav li a:hover  .img-background.packages {
+  background-image: url("../img/packageorange.png");
+}
+
+.main-panel .sidebar:not(.sideNavShort) .side-nav li a:hover  .img-background.order {
+  background-image: url("../img/orderorange.png");
 }
 
 

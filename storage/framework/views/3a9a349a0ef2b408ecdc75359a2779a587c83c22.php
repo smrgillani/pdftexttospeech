@@ -58,7 +58,7 @@
                </li>
                <li>
                   <a href="<?php echo e(route('orders.index')); ?>">
-                     <span class="img-background packages"></span>
+                     <span class="img-background order"></span>
                      <span class="text">
                         ORDERS
                      </span>

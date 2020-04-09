@@ -44,7 +44,7 @@
                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                 <div>
                     No,Package Found
-                    <p><a href="<?php echo e(route('index')); ?>">Go To Home</a></p>
+                    <p><a href="<?php echo e(route('home')); ?>">Go To Home</a></p>
                 </div>
                 <?php endif; ?>
              

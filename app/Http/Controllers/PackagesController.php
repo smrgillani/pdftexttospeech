@@ -7,6 +7,7 @@ use App\Membership;
 use App\Package;
 use App\Utilities\Helper;
 use Exception;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PackagesController extends Controller
@@ -26,11 +27,11 @@ class PackagesController extends Controller
 
             if (auth()->user() && auth()->user()->isAdmin == 1) {
                 $data = Package::all();
-                return view('packages.PackagesAdminPage', ["data" => $data]);
+                return view('packages.index', ["data" => $data]);
             }
         } else {
             $data = Membership::all();
-            return view('packages.packages',['data' => $data]);
+            return view('packages.packages', ['data' => $data]);
             return view('packages.packagesList', ['data' => $data]);
         }
 
@@ -82,7 +83,7 @@ class PackagesController extends Controller
             ->join('users', 'subscribe_package.user_id', '=', 'users.id')
             ->join('packages', 'subscribe_package.package_id', '=', 'packages.Id')
             ->select('users.status', 'users.email', 'packages.title', 'users.name', 'users.id as user_id', 'packages.Id as package_id', 'subscribe_package.id', 'subscribe_package.subscribe_time')
-            ->where('packages.deleted_at',null)
+            ->where('packages.deleted_at', null)
             ->get();
 
         return view('packages.ViewSubscribers', ['data' => $data]);
@@ -121,7 +122,7 @@ class PackagesController extends Controller
         }
 
         $package = Package::create($data);
-        return view('ajax.package', ["package" => $package]); //Return Single Package To Be Display Via Ajax
+        return view('ajax.package', ["package" => $package]); //Return Single Package To Be Displayed Via Ajax
 
     }
     public function UpdatePackageToDb()
@@ -222,5 +223,49 @@ class PackagesController extends Controller
 
         return $response;
 
+    }
+
+    public function update(Package $package, Request $request)
+    {
+        $data = [
+            "title"             => $request->editTitle,
+            "description"       => $request->editDescription,
+            "price"             => $request->editPrice,
+            "rebill_commission" => $request->editRebillCommission,
+            "rebill_price"      => $request->editRebillPrice,
+        ];
+        if ($package->update($data)) {
+            return view('ajax.updatePackage', ["package" => $package]); //Return Updated Package Via Ajax View
+
+        }
+    }
+    public function packagesearch(Request $request)
+    {
+        if ($request->ajax()) {
+            $output = '';
+            $query  = $request->packagesearch;
+
+            if ($query != '') {
+                $data = Package::
+
+                    where('id', '<>', 1)
+                    ->where('title', 'like', '%' . $query . '%')
+                    ->orWhere('sku', 'like', '%' . $query . '%')
+                    ->orWhere('price', 'like', '%' . $query . '%')
+                    ->orderBy('id', 'desc')
+                    ->get();
+
+            } else {
+                $data = Package::where('id', '<>', 1)->
+                    orderBy('id', 'desc')
+                    ->get();
+            }
+            $total_row = $data->count();
+            return response([
+                'total_data' => $total_row,
+                'table_data' => $data,
+            ]);
+
+        }
     }
 }

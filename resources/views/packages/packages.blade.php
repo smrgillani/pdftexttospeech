@@ -43,7 +43,7 @@
                @empty
                 <div>
                     No,Package Found
-                    <p><a href="{{route('index')}}">Go To Home</a></p>
+                    <p><a href="{{route('home')}}">Go To Home</a></p>
                 </div>
                 @endforelse
              

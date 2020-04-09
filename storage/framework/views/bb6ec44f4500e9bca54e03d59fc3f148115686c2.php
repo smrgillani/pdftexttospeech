@@ -1,47 +1,74 @@
+<?php $__env->startSection('content'); ?>
 
- <?php $__env->startSection('content'); ?>
 <div class="container  pl-5 pr-5">
-    <div class="row">
-        <div class="col-md-12">
-            <h3>
-                        Admin Panel
+               <div class="row">
+                  <div class="col-md-12">
+                     <h3>
+                        Packages
                      </h3>
-            <div style="float: right">
-                <a type="button" id='addpackageform' class="btn  themeBtn">
-                              Add Package
-                            </a>
-                <!-- <button type="button" id='viewsubscribers' class="btn  themeBtn" data-toggle="modal" data-target="#myModal"> -->
-                <a href='<?php echo e(route("ViewSubscribers")); ?>' type="button" id='viewsubscribers' class="btn  themeBtn">
-                              View Subscribers
-                            </a>
+                  </div>
+               </div>
+               <div class="row text-right pt-4">
+                  <div class="col-lg-6 offset-lg-6">
+                    <div class="form-group d-flex">
+
+                               <input type="text" name="search" id="search" placeholder="Search Packages" class="form-control mr-3">
+                                <a class="btn themeBtn pt-12px" id="clearform" data-toggle="modal" data-target="#createPackage">Create Package</a>
+                              </div>
+                  </div>
+               </div>
+
+               <div class="row mt-3">
+                  <div class="col-md-12">
+                    <div class="table-responsive-md">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <!-- <th>Name</th> -->
+                            <th>Title</th>
+                            <th>Sku</th>
+                            <th>Price</th>
+                            <th>Operations</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php $__empty_1 = true; $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $package): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                          <tr id="package<?php echo e($package->id); ?>">
+                        
+
+                            <td><?php echo e($package->title); ?></td>
+
+                            <td><?php echo e($package->sku); ?></td>
+
+                            <td><?php echo e($package->price); ?></td>
+
+                            <td>
+                              <div class="d-flex">
+
+                                    <a   class="mr-4 editbtn editPackage"  packageID="<?php echo e($package->id); ?>" data-package-id="<?php echo e($package->id); ?>" data-title="<?php echo e($package->title); ?>" data-description="<?php echo e($package->description); ?>" data-price="<?php echo e($package->price); ?>" data-rebill-price="<?php echo e($package->rebill_price); ?>" data-rebill-commission="<?php echo e($package->rebill_commission); ?>" data-sku="<?php echo e($package->sku); ?>"><img src="assets/img/edit.png" width="" data-toggle="tooltip" title="Edit"></a>
+                              
+
+                              <a href='#' class="mr-4 deletebtn" id="deletepackage" packageID="<?php echo e($package->id); ?>"> 
+                                <img src="assets/img/deleteicon.png" width="" data-toggle="tooltip" title="Delete">
+                              </a>
+
+
+                              </div>
+                            </td>
+                          </tr>
+                          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                          <tr>
+                          <td colspan="6" align="center">No Package Found</td>
+                          </tr>
+                           <?php endif; ?>
+
+                        </tbody>
+                      </table>
+                      </div>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-
-    <div style='margin:25px'>
-        <ul style="list-style: none;" id="packageList">
-            <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $packages): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <li>
-                <div style='margin:10px' class="card">
-                    <h5 style="color: black" class="card-header"><?php echo e($packages->name); ?></h5>
-                    <div class="card-body">
-                        <p style="color: black" class="card-text"><?php echo e($packages->description); ?></p>
-                        <p>
-                            <h5 style="color: black; float: right" class="card-title">$<?php echo e($packages->price); ?> /Month</h5></p>
-                      <!--   <a  class="btn themeBtn editPackage"  packageID="<?php echo e($packages->id); ?>" data-title="<?php echo e($packages->title); ?>" data-description="<?php echo e($packages->description); ?>" data-price="<?php echo e($packages->price); ?>" data-rebill-price="<?php echo e($packages->rebill_price); ?>" data-rebill-commission="<?php echo e($packages->rebill_commission); ?>" data-sku="<?php echo e($packages->sku); ?>">Edit</a> -->
-                        <a href='#' class="btn themeBtn" id="deletepackage" packageID="<?php echo e($packages->id); ?>">Delete</a>
-                    </div>
-                </div>
-            </li>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        </ul>
-
-    </div>
-
-</div>
-<!-- Modal -->
-
-
+ 
 <!-- create Package Model -->
 
 <div class="modal fade" id="createPackage">
@@ -132,8 +159,6 @@
     </div>
 
     <!-- End Create Pckage Model -->
-
-
 
 <!-- create Edit Package Model -->
 
@@ -246,7 +271,10 @@
     </div>
 </div>
 <!-- End Alert Message Model -->
-    <?php $__env->stopSection(); ?> 
+
+
+<?php $__env->stopSection(); ?>
+
     <?php $__env->startPush('scripts'); ?>
     <script type="text/javascript">
           $.ajaxSetup({
@@ -316,8 +344,9 @@
         //Edit package
 
         $(() => {
+                var $this ;
                 $(".editPackage").click((event)=> {
-                   var $this = $(event.currentTarget);
+                    $this = $(event.currentTarget);
                   $("input[name='editTitle']").val($this .data('title'));
                   $("input[name='editDescription']").val($this .data('description'));
                   $("input[name='editSku']").val($this .data('sku'));
@@ -328,24 +357,30 @@
                 });
 
 
-                //On Create Package Button
+                //On Edit Package Button
                 $("#editPackageButton").click(()=>{
-
-             
+                  console.log($this .data('package-id'))
+                url='<?php echo e(route("packages.update","package")); ?>'
+                url=url.replace('package',$this .data('package-id'))
 
         $.ajax({
 
-           type:'POST',
+           type:'PUT',
 
-           url:'<?php echo e(route("AddPackage")); ?>',
 
+           url:url,
            data:   $("#editPackageForm").serialize(),
 
             success: function(msg){
                   $("#packageList").append(msg);
                   $("#createPackage").modal("hide");
-                  $("#message").text("Package Created!");
+                  $("#message").text("Package Updated!");
+
+                  $("#package"+$this.data('package-id')).html(msg)
+                  $("#editPackage").modal("hide");
+
                   $("#alertModal").modal();
+
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                  $('#validation-errors').html('');
@@ -389,6 +424,66 @@
             });
 
         });
+
+
+        /*Search Package*/
+            $('#search').on('keyup',function(){
+
+      $packagesearch=$(this).val();
+
+      $.ajax({
+
+      type : 'get',
+
+      url : '<?php echo e(route("packagesearch")); ?>',
+
+      data:{'packagesearch':$packagesearch},
+
+      success:function(response){
+
+       let output='';
+
+        if(response.total_data>0){
+
+          $.each(response.table_data, function() {
+
+        output += '<tr>'+
+
+             '<td>'+this.title +'</td>'+
+
+             '<td>'+this.sku +'</td>'+
+
+
+             '<td>'+this.price +'</td>'+
+
+            
+
+             '<td>'+
+              ' <div class="d-flex">'+
+              '<a  class="mr-4 editbtn editPackage" data-membershipID="'+ this.id +'" ><img src="<?php echo e(asset('assets/img/edit.png')); ?>" width="" data-toggle="tooltip" title="Edit"></a>'+
+              '<a href="" class="mr-4 deletebtn" id="deletepackage" data-target="#deleteMembership" data-membershipID="'+ this.id +'" ><img src="<?php echo e(asset('assets/img/deleteicon.png')); ?>" width="" data-toggle="tooltip" title="Delete"></a>'+
+
+
+            '</div>'+
+            '</td>'+
+
+            '</tr>';
+
+        });
+
+
+          }else{
+
+            $('#message').text('No Data Found');
+
+            $('#alertMessage').modal("show");
+
+          }
+      $('tbody').html(output);
+      }
+    });
+  });
+        /*End Search*/
     </script>
     <?php $__env->stopPush(); ?>
-<?php echo $__env->make('layouts2.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/sarmad/Work/FreelanceWork/PhpProjects/AudioBot/html/resources/views/packages/PackagesAdminPage.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts2.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/sarmad/Work/FreelanceWork/PhpProjects/AudioBot/html/resources/views/packages/index.blade.php ENDPATH**/ ?>

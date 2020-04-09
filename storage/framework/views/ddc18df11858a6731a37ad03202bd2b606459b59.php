@@ -1,12 +1,19 @@
-<li>
-    <div style='margin:10px' class="card">
-        <h5 style="color: black" class="card-header"><?php echo e($package->title); ?></h5>
-        <div class="card-body">
-            <p style="color: black" class="card-text"><?php echo e($package->description); ?></p>
-            <p>
-                <h5 style="color: black; float: right" class="card-title">$<?php echo e($package->price); ?> /Month</h5></p>
-            <!-- <a href='<?php echo e(route("UpdatePackage")); ?>/<?php echo e($package->id); ?>' class="btn themeBtn" id="updatepackage" packageID="<?php echo e($package->id); ?>">Update</a> -->
-            <a href='#' class="btn themeBtn" id="deletepackage" packageID="<?php echo e($package->id); ?>">Delete</a>
-        </div>
-    </div>
-</li><?php /**PATH /home/sarmad/Work/FreelanceWork/PhpProjects/AudioBot/html/resources/views/ajax/package.blade.php ENDPATH**/ ?>
+
+
+      <tr>
+                        
+
+        <td><?php echo e($package->title); ?></td>
+
+        <td><?php echo e($package->sku); ?></td>
+
+        <td><?php echo e($package->price); ?></td>
+
+        <td>
+          <div class="d-flex">
+
+              <!--   <a  class="btn themeBtn editPackage"  packageID="<?php echo e($package->id); ?>" data-title="<?php echo e($package->title); ?>" data-description="<?php echo e($package->description); ?>" data-price="<?php echo e($package->price); ?>" data-rebill-price="<?php echo e($package->rebill_price); ?>" data-rebill-commission="<?php echo e($package->rebill_commission); ?>" data-sku="<?php echo e($package->sku); ?>">Edit</a> -->
+            <a href='#' class="mr-4 deletebtn" id="deletepackage" packageID="<?php echo e($package->id); ?>"> <img src="assets/img/deleteicon.png" width="" data-toggle="tooltip" title="Delete"></a>
+          </div>
+        </td>
+      </tr><?php /**PATH /home/sarmad/Work/FreelanceWork/PhpProjects/AudioBot/html/resources/views/ajax/package.blade.php ENDPATH**/ ?>

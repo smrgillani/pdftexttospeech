@@ -603,7 +603,6 @@
 
             output += '<tr>'+
 
-            '<td>'+response.data.name +'</td>'+
 
              '<td>'+response.data.price +'</td>'+
 
@@ -693,7 +692,6 @@
 
                 output += '<tr>'+
 
-             '<td>'+this.name +'</td>'+
 
              '<td>'+this.price +'</td>'+
 

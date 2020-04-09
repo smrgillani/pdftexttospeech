@@ -13,6 +13,7 @@
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/package', 'PackagesController@ListPackages')->name('Packages');
+Route::put('/updatePackage/{package}/update', 'PackagesController@update')->name('packages.update');
 
 Route::get('/', function () {
     if(auth()->user())
@@ -86,6 +87,7 @@ Route::group(["middleware" => "isSubsriber"], function () {
     Route::get('voicegenderdemo', 'VoiceController@voicegenderdemo')->name('voicegenderdemo');
 
     Route::get('membershipsearch', 'MembershipController@membershipsearch')->name('membershipsearch');
+    Route::get('packagesearch', 'PackagesController@packagesearch')->name('packagesearch');
 
     Route::get('usersearch', 'UserController@usersearch')->name('usersearch');
 

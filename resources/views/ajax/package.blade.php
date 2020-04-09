@@ -1,12 +1,19 @@
-<li>
-    <div style='margin:10px' class="card">
-        <h5 style="color: black" class="card-header">{{$package->title}}</h5>
-        <div class="card-body">
-            <p style="color: black" class="card-text">{{$package->description}}</p>
-            <p>
-                <h5 style="color: black; float: right" class="card-title">${{$package->price}} /Month</h5></p>
-            <!-- <a href='{{ route("UpdatePackage")}}/{{$package->id}}' class="btn themeBtn" id="updatepackage" packageID="{{$package->id}}">Update</a> -->
-            <a href='#' class="btn themeBtn" id="deletepackage" packageID="{{$package->id}}">Delete</a>
-        </div>
-    </div>
-</li>
+
+
+      <tr>
+                        
+
+        <td>{{$package->title}}</td>
+
+        <td>{{$package->sku}}</td>
+
+        <td>{{$package->price}}</td>
+
+        <td>
+          <div class="d-flex">
+
+              <!--   <a  class="btn themeBtn editPackage"  packageID="{{$package->id}}" data-title="{{$package->title}}" data-description="{{$package->description}}" data-price="{{$package->price}}" data-rebill-price="{{$package->rebill_price}}" data-rebill-commission="{{$package->rebill_commission}}" data-sku="{{$package->sku}}">Edit</a> -->
+            <a href='#' class="mr-4 deletebtn" id="deletepackage" packageID="{{$package->id}}"> <img src="assets/img/deleteicon.png" width="" data-toggle="tooltip" title="Delete"></a>
+          </div>
+        </td>
+      </tr>

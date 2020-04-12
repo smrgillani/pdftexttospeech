@@ -1,24 +1,12 @@
 <?php $__env->startSection('content'); ?>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                    <?php if($errors->any()): ?>
-                      <div class="alert alert-danger"> 
-                        <?php echo e(implode('', $errors->all(':message'))); ?>
-
-                      </div>
-                    <?php endif; ?>
-                    
-                    <?php if(session()->has('message')): ?>
-                        <div class="alert alert-success">
-                            <?php echo e(session()->get('message')); ?>
-
+<section class="login">
+        <div class="container">
+            <div class="row justify-content-center align-content-center">
+                <div class="col-md-12">
+                    <div class="loginBox">
+                        <div class="text-center mb-5 pb-3">
+                            <img src="<?php echo e(asset('assets/img/logo.png')); ?>">
                         </div>
-                    <?php endif; ?>
-                <div class="card-header"><?php echo e(__('Register')); ?></div>
-    
-                <div class="card-body">
                     <form method="POST" action="
 
                     <?php if(request()->route()->getName()=='user.register'): ?>
@@ -39,95 +27,61 @@
                             <input type='hidden' value='<?php echo e(request()->cbreceipt); ?>' name='cbreceipt'>
                          <?php endif; ?>
                         <input type="hidden" name="redirect" value="<?php echo e($link); ?>">
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Name')); ?></label>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control <?php if ($errors->has('name')) :
+                        <div class="form-group">
+                            
+                            <span class="<?php if ($errors->has('name')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('name'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
-endif; ?>" name="name" value="<?php echo e(old('name')); ?>" required autocomplete="name" autofocus>
-                                
+endif; ?>">
+                                <input type="text"  name="name" placeholder="Name"  class="form-control "  value="<?php echo e(old('name')); ?>" required autocomplete="name">
+                            </span>
+                            
 
-                                <?php if ($errors->has('name')) :
-if (isset($message)) { $messageCache = $message; }
-$message = $errors->first('name'); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                                <?php unset($message);
-if (isset($messageCache)) { $message = $messageCache; }
-endif; ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right"><?php echo e(__('E-Mail Address')); ?></label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control <?php if ($errors->has('email')) :
+                          </div>
+                          <div class="form-group">
+                            
+                            <span class="<?php if ($errors->has('email')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('email'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
-endif; ?>" name="email" value="<?php echo e(old('email')); ?>" required autocomplete="email">
+endif; ?>">
+                                <input type="email"  name="email" placeholder="User email"  class="form-control "  value="<?php echo e(old('email')); ?>" required autocomplete="email">
+                            </span>
+                            
 
-                                <?php if ($errors->has('email')) :
-if (isset($message)) { $messageCache = $message; }
-$message = $errors->first('email'); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                                <?php unset($message);
-if (isset($messageCache)) { $message = $messageCache; }
-endif; ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Password')); ?></label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control <?php if ($errors->has('password')) :
+                          </div>
+                          <div class="form-group">
+                          
+                            <span class="<?php if ($errors->has('password')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('password'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
-endif; ?>" name="password" required autocomplete="new-password">
+endif; ?>">
+                                <input type="password" name="password" placeholder="User password" autocomplete="false" class="form-control"   required>
+                            </span>
+                            
+                          </div>
+                          <div class="form-group">
+                          
+                            <span class="">
+                                <input type="password" name="password_confirmation" placeholder="Confirm password" autocomplete="false" class="form-control"   required>
+                            </span>
+                            
+                          </div>
 
-                                <?php if ($errors->has('password')) :
-if (isset($message)) { $messageCache = $message; }
-$message = $errors->first('password'); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                                <?php unset($message);
-if (isset($messageCache)) { $message = $messageCache; }
-endif; ?>
-                            </div>
-                        </div>
+                  
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Confirm Password')); ?></label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <?php echo e(__('Register')); ?>
-
-                                </button>
-                            </div>
-                        </div>
+                        
+                          <button type="submit" class="btn themeBtn w-100 text-white p-2 mt-4">Register</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/sarmad/Work/FreelanceWork/PhpProjects/AudioBot/html/resources/views/auth/register.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts2.auth', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/sarmad/Work/FreelanceWork/PhpProjects/AudioBot/html/resources/views/auth/register.blade.php ENDPATH**/ ?>

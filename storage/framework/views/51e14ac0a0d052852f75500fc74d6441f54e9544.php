@@ -32,6 +32,7 @@
                            <li><?php echo e($membership->voice_type); ?> Voice Type</li>
                            <li><?php echo e($membership->characters_length); ?>  Character Allowed</li>
                            <li><?php echo e($membership->package->description); ?></li>
+                           <li><?php $__currentLoopData = $membership->languages[0]->languagevoices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $voice): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php echo e($voice->name); ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></li>
                           
                         </ul>
                           <form >

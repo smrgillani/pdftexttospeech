@@ -31,6 +31,7 @@
                            <li>{{$membership->voice_type}} Voice Type</li>
                            <li>{{$membership->characters_length}}  Character Allowed</li>
                            <li>{{$membership->package->description}}</li>
+                           <li>@foreach($membership->languages[0]->languagevoices as $voice){{$voice->name}}@endforeach</li>
                           
                         </ul>
                           <form >

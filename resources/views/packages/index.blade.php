@@ -326,7 +326,7 @@
            data:   $("#addPackageForm").serialize(),
 
             success: function(msg){
-                  $("#packageList").append(msg);
+                  $("#tbody").append(msg);
                   $("#createPackage").modal("hide");
                   $("#message").text("Package Created!");
                   $("#alertModal").modal();

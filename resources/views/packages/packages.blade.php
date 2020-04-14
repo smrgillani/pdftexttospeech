@@ -31,7 +31,7 @@
                            <li>{{$membership->voice_type}} Voice Type</li>
                            <li>{{$membership->characters_length}}  Character Allowed</li>
                            <li>{{$membership->package->description}}</li>
-                           <li>@foreach($membership->languages[0]->languagevoices as $voice){{$voice->name}}@endforeach</li>
+                           <li>{{$membership->languages[0]->name}}</li>
                           
                         </ul>
                           <form >
@@ -42,9 +42,9 @@
                   </div>
                </div>
                @empty
-                <div>
+                <div class="text-xs-center">
                     No,Package Found
-                    <p><a href="{{route('home')}}">Go To Home</a></p>
+                    <!-- <p><a href="{{route('home')}}">Go To Home</a></p> -->
                 </div>
                 @endforelse
              

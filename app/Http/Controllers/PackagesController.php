@@ -30,7 +30,10 @@ class PackagesController extends Controller
                 return view('packages.index', ["data" => $data]);
             }
         } else {
-            $data = Membership::where('package_id','!=',1)->get();
+            $data = Membership::
+            where('id','!=',1)
+            ->whereStatus(1)
+            ->get();
             return view('packages.packages', ['data' => $data]);
             return view('packages.packagesList', ['data' => $data]);
         }
@@ -113,6 +116,7 @@ class PackagesController extends Controller
         try {
             $sku = $this->helper->addProduct($request->except('_token')); //Add To Click Bank
 
+
         } catch (Exception $e) {
             return response()->json([
                 'message' => "Package Not Created !",
@@ -122,7 +126,7 @@ class PackagesController extends Controller
         }
 
         $package = Package::create($data);
-        return view('ajax.package', ["package" => $package]); //Return Single Package To Be Displayed Via Ajax
+        return view('ajax.package', ["package" => $package,"sku"=>$sku]); //Return Single Package To Be Displayed Via Ajax
 
     }
     public function UpdatePackageToDb()

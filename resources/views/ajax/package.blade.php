@@ -17,3 +17,4 @@
           </div>
         </td>
       </tr>
+      <input type="hidden" name="sku-" value="{{$sku}}">

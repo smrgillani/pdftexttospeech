@@ -16,4 +16,5 @@
             <a href='#' class="mr-4 deletebtn" id="deletepackage" packageID="<?php echo e($package->id); ?>"> <img src="assets/img/deleteicon.png" width="" data-toggle="tooltip" title="Delete"></a>
           </div>
         </td>
-      </tr><?php /**PATH /home/sarmad/Work/FreelanceWork/PhpProjects/AudioBot/html/resources/views/ajax/package.blade.php ENDPATH**/ ?>
+      </tr>
+      <input type="hidden" name="sku-" value="<?php echo e($sku); ?>"><?php /**PATH /home/sarmad/Work/FreelanceWork/PhpProjects/AudioBot/html/resources/views/ajax/package.blade.php ENDPATH**/ ?>

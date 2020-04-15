@@ -352,9 +352,11 @@ class MembershipController extends Controller
 
     public function index()
     {
-        $memberships = Membership::where('id', '<>', 1)->orderBy('id', 'desc')
+        $memberships = Membership::where('id', '<>', 1)
+                        ->orWhere('package_id','<>',1)
+                        ->orderBy('id', 'desc')
             ->get();
-        $packages = Package::all();
+        $packages = Package::where('id','<>',1)->get();
         return view('membership.index')->with(['memberships' => $memberships, "packages" => $packages]);
     }
 

@@ -12,6 +12,7 @@ class RegisterController extends Controller
 
   	public function register()
     {
+      
     	$link=request()->fullUrl();
 
         return view('auth.register',compact('link'));

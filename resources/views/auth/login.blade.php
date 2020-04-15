@@ -10,6 +10,12 @@
    						<div class="text-center mb-5 pb-3">
    							<img src="{{asset('assets/img/logo.png')}}">
    						</div>
+              @if(Session::has('error'))
+              <div class="alert alert-danger">
+            
+                        {{ Session('error') }}
+              </div>
+              @endif
    						<form method="POST" action="{{ route('login') }}">
                             @csrf
 						  <div class="form-group">

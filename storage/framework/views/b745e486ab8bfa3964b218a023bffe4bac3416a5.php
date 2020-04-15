@@ -8,6 +8,13 @@
    						<div class="text-center mb-5 pb-3">
    							<img src="<?php echo e(asset('assets/img/logo.png')); ?>">
    						</div>
+              <?php if(Session::has('error')): ?>
+              <div class="alert alert-danger">
+            
+                        <?php echo e(Session('error')); ?>
+
+              </div>
+              <?php endif; ?>
    						<form method="POST" action="<?php echo e(route('login')); ?>">
                             <?php echo csrf_field(); ?>
 						  <div class="form-group">

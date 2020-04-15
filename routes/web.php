@@ -16,8 +16,7 @@ Route::get('/package', 'PackagesController@ListPackages')->name('Packages');
 Route::put('/updatePackage/{package}/update', 'PackagesController@update')->name('packages.update');
 
 Route::get('/', function () {
-    if(auth()->user())
-    {
+    if (auth()->user()) {
         return redirect()->route('home');
     }
     return view('auth.memberlogin');
@@ -32,7 +31,7 @@ Route::get('clearCache', function () {
 });
 
 Auth::routes();
-Route::get('selfRegister', 'RegisterController@register')->name('user.register');
+Route::get('selfRegister', 'RegisterController@register')->name('user.register')->middleware('isExist');
 Route::get('register', 'RegisterController@register')->name('register')->middleware('signed');
 
 Route::post('register', 'RegisterController@process');

@@ -12,7 +12,7 @@
                   <div class="col-lg-6 offset-lg-6">
                     <div class="form-group d-flex">
 
-                               <input type="text" name="search" id="search" placeholder="Search Packages" class="form-control mr-3">
+                               <input type="text" name="search" id="search" placeholder="Search Memberships" class="form-control mr-3">
                                 <a class="btn themeBtn pt-12px" id="clearform" data-toggle="modal" data-target="#createMembership">Create Membership</a>
                               </div>
                   </div>
@@ -62,7 +62,7 @@
                             </td>
                           </tr>
                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-                          <tr>
+                          <tr class="nothingFound">
                           <td colspan="6" align="center">No Membership Found</td>
                           </tr>
                            <?php endif; ?>
@@ -628,6 +628,7 @@
 
 
           $('tbody').append(output);
+          $(".nothingFound").addClass('d-none')
 
           }
              $('#createMembership').modal("hide");

@@ -38,7 +38,7 @@ Route::post('register', 'RegisterController@process');
 Route::post('selfRegister', 'Auth\RegisterController@register')->name('auth.register');
 
 Route::resource('orders', 'OrderController');
-Route::group(["middleware" => "isSubsriber"], function () {
+Route::group(["middleware" => ["isSubsriber","checkOrderStatus"]], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
 

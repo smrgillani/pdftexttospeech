@@ -29,7 +29,7 @@
                      <div class="pricing-content">
                         <ul>
                            <li>{{$membership->voice_type}} Voice Type</li>
-                           <li>{{$membership->characters_length}}  Character Allowed</li>
+                           <li>{{$membership->characters_length}}  Characters Limit</li>
                            <li>{{$membership->package->description}}</li>
                            <li>{{$membership->languages[0]->name}}</li>
                           

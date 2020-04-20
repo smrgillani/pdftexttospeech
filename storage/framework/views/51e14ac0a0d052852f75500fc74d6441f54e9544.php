@@ -30,7 +30,7 @@
                      <div class="pricing-content">
                         <ul>
                            <li><?php echo e($membership->voice_type); ?> Voice Type</li>
-                           <li><?php echo e($membership->characters_length); ?>  Character Allowed</li>
+                           <li><?php echo e($membership->characters_length); ?>  Characters Limit</li>
                            <li><?php echo e($membership->package->description); ?></li>
                            <li><?php echo e($membership->languages[0]->name); ?></li>
                           

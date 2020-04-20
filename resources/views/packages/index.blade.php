@@ -59,7 +59,7 @@
                             </td>
                           </tr>
                           @empty
-                          <tr>
+                          <tr class="nothingFound">
                           <td colspan="6" align="center">No Package Found</td>
                           </tr>
                            @endforelse
@@ -121,8 +121,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Rebill Comission</label>
-                                <input type="number" class="form-control input-sm" style="color: black;" name='rebillCommission' required>
+                                <label>Rebill Comission (%)</label>
+                                <input type="number" class="form-control input-sm" style="color: black;" name='rebillCommission' required min="1">
                             </div>
 
                             <div class="form-group">
@@ -162,7 +162,7 @@
 
     <!-- End Create Pckage Model -->
 
-<!-- create Edit Package Model -->
+<!--  Edit Package Model -->
 
 <div class="modal fade" id="editPackage">
     <div class="modal-dialog modal-md">
@@ -212,7 +212,7 @@
                               </div>
 
                               <div class="form-group">
-                                  <label>Rebill Comission</label>
+                                  <label>Rebill Comission (%)</label>
                                   <input type="number" class="form-control input-sm" style="color: black;" name='editRebillCommission' required>
                               </div>
 
@@ -240,6 +240,47 @@
     </div>
 
     <!-- End Edit Package Model -->
+<!-- End Edit Package  -->
+
+    <!-- Delete Package Model -->
+      <div class="modal fade" id="deletePackage">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content">
+
+          <form  id="delUserForm">
+
+            <!-- Hidden Attributes -->
+            <input type="hidden" name="PackageID" value="" id="PackageID">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h5 class="modal-title">Delete Package</h5>
+              <button type="button" class="close" data-dismiss="modal">
+                <img src="{{asset('assets/img/close.png')}}">
+              </button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                      <label>Are you Sure to Delete this Package?</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button id="deletePackageBtn" class="btn greenBtn mr-2">Delete</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+<!-- End Delete Package Model -->
 
 <!-- Alert Message Model -->
 <div id="alertModal" class="modal fade" role="dialog">
@@ -326,7 +367,8 @@
            data:   $("#addPackageForm").serialize(),
 
             success: function(msg){
-                  $("#tbody").append(msg);
+                  $("tbody").append(msg);
+                  $(".nothingFound").addClass('d-none')
                   $("#createPackage").modal("hide");
                   $("#message").text("Package Created!");
                   $("#alertModal").modal();
@@ -399,10 +441,19 @@
 
         $('body').on('click', '#deletepackage', function(e) {
 
+
+            e.preventDefault();
+            $("#PackageID").val($(this).attr('packageid'))
+            $("#deletePackage").modal()
+
+
+        });
+         $('body').on('click', '#deletePackageBtn', function(e) {
+
+
             e.preventDefault();
 
-            console.log($(this).attr('packageid'));
-            var url = '{{ route("DeletePackage")}}' + "/" + $(this).attr('packageid');
+            var url = '{{ route("DeletePackage")}}' + "/" + $("#PackageID").val();
 
             $.ajax({
 

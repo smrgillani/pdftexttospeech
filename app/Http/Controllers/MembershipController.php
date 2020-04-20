@@ -617,7 +617,7 @@ class MembershipController extends Controller
     public function destroy(Membership $membership)
     {
 
-        $message = $membership->delete();
+        $message = $membership->forceDelete();
         return $message == true ? response()->json([
             'message' => "Membership deleted successfully",
             'data'    => Membership::where('id', '<>', 1)->orderBy('id', 'desc')->get(),

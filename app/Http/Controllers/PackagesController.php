@@ -23,12 +23,10 @@ class PackagesController extends Controller
     {
         // display the list of packages for client
 
-        if (auth()->user()) {
+        if (auth()->user() && auth()->user()->isAdmin == 1) {
+            $data = Package::where('id', '!=', 1)->get();
+            return view('packages.index', ["data" => $data]);
 
-            if (auth()->user() && auth()->user()->isAdmin == 1) {
-                $data = Package::where('id','!=',1)->get();
-                return view('packages.index', ["data" => $data]);
-            }
         } else {
             $data = Membership::
                 where('id', '!=', 1)
@@ -150,7 +148,8 @@ class PackagesController extends Controller
     }
     public function DeletePackage(Package $id)
     {
-        return $id->delete()
+
+        return $id->forceDelete()
         ? response()->json(["data" => "null", "message" => "Package Deleted", "error" => false])
         : response()->json(["data" => "null", "message" => "Cannot Deleted", "error" => true]);
     }

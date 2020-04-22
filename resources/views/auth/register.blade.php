@@ -37,7 +37,15 @@
                             
 
                           </div>
-                          <div class="form-group">
+                          @if(request()->cemail)
+                      
+                                <input type="hidden"  name="email" placeholder="User email"  class="form-control "  value="{{request()->cemail}}" required autocomplete="email">
+                     
+                            
+
+                 
+                          @else
+                              <div class="form-group">
                             
                             <span class="@error('email') is-invalid @enderror">
                                 <input type="email"  name="email" placeholder="User email"  class="form-control "  value="{{ old('email') }}" required autocomplete="email">
@@ -45,6 +53,7 @@
                             
 
                           </div>
+                          @endif
                           <div class="form-group">
                           
                             <span class="@error('password') is-invalid @enderror">

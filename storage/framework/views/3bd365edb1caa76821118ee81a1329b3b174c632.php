@@ -40,7 +40,15 @@ endif; ?>">
                             
 
                           </div>
-                          <div class="form-group">
+                          <?php if(request()->cemail): ?>
+                      
+                                <input type="hidden"  name="email" placeholder="User email"  class="form-control "  value="<?php echo e(request()->cemail); ?>" required autocomplete="email">
+                     
+                            
+
+                 
+                          <?php else: ?>
+                              <div class="form-group">
                             
                             <span class="<?php if ($errors->has('email')) :
 if (isset($message)) { $messageCache = $message; }
@@ -52,6 +60,7 @@ endif; ?>">
                             
 
                           </div>
+                          <?php endif; ?>
                           <div class="form-group">
                           
                             <span class="<?php if ($errors->has('password')) :

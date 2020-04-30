@@ -32,7 +32,7 @@
                            <li><?php echo e($membership->voice_type); ?> Voice Type</li>
                            <li><?php echo e($membership->characters_length); ?>  Characters Limit</li>
                            <li><?php echo e($membership->package->description); ?></li>
-                           <li><?php echo e($membership->languages[0]->name); ?></li>
+                           <li><?php $__empty_2 = true; $__currentLoopData = $membership->languages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $language): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_2 = false; ?> <?php echo e($language->name); ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_2): ?> <?php endif; ?></li>
                           
                         </ul>
                           <form >

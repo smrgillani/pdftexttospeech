@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Package;
+use App\Mail\MembershipPurchased;
+use Mail;
 class RegisterController extends Controller
 {
     /*
@@ -69,6 +71,7 @@ class RegisterController extends Controller
             'email'    => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+         // Mail::to($request->user())->send(new MembershipPurchased($order));
 
         if ($user->can('create-order')) {
             $package = Package::whereSku(request()->item)->first();

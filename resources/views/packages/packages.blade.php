@@ -31,7 +31,7 @@
                            <li>{{$membership->voice_type}} Voice Type</li>
                            <li>{{$membership->characters_length}}  Characters Limit</li>
                            <li>{{$membership->package->description}}</li>
-                           <li>{{$membership->languages[0]->name}}</li>
+                           <li>@forelse($membership->languages as $language) {{$language->name}}@empty @endforelse</li>
                           
                         </ul>
                           <form >

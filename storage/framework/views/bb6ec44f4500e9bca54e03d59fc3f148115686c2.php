@@ -119,7 +119,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Rebill Comission</label>
+                                <label>Rebill Comission (%)</label>
                                 <input type="number" class="form-control input-sm" style="color: black;" name='rebillCommission' required min="1">
                             </div>
 
@@ -210,7 +210,7 @@
                               </div>
 
                               <div class="form-group">
-                                  <label>Rebill Comission</label>
+                                  <label>Rebill Comission (%)</label>
                                   <input type="number" class="form-control input-sm" style="color: black;" name='editRebillCommission' required>
                               </div>
 

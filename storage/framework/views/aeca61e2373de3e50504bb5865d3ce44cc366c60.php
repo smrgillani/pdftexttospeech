@@ -17,7 +17,9 @@
                             <th>Membership</th>
                             <th>User</th>
                             <th>Price</th>
+                            <?php if(auth()->user()->isAdmin): ?>
                             <th>Operations</th>
+                            <?php endif; ?>
                           </tr>
                         </thead>
                         <tbody>
@@ -26,6 +28,7 @@
 
                             <td><a href="<?php echo e(route('user.index')); ?>"><?php echo e($order->user->name); ?></a></td>
                             <td><a href="<?php echo e(route('user.index')); ?>">$ <?php echo e($order->membership->package->price); ?></a></td>
+                            <?php if(auth()->user()->isAdmin): ?>
                             <td>
                               <div class="d-flex">
 
@@ -38,6 +41,7 @@
 
                               </div>
                             </td>
+                            <?php endif; ?>
                           </tr>
                         </tbody>
                       </table>

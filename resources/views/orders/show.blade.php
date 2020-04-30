@@ -19,7 +19,9 @@
                             <th>Membership</th>
                             <th>User</th>
                             <th>Price</th>
+                            @if(auth()->user()->isAdmin)
                             <th>Operations</th>
+                            @endif
                           </tr>
                         </thead>
                         <tbody>
@@ -28,6 +30,7 @@
 
                             <td><a href="{{route('user.index')}}">{{$order->user->name}}</a></td>
                             <td><a href="{{route('user.index')}}">$ {{$order->membership->package->price}}</a></td>
+                            @if(auth()->user()->isAdmin)
                             <td>
                               <div class="d-flex">
 
@@ -40,6 +43,7 @@
 
                               </div>
                             </td>
+                            @endif
                           </tr>
                         </tbody>
                       </table>

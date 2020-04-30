@@ -11,7 +11,7 @@
                   <div class="col-lg-6 offset-lg-6">
                     <div class="form-group d-flex">
                                 
-                               <input type="text" name="search" id="search" placeholder="Search Books" class="form-control mr-3">
+                               <input type="text" name="search" id="search" placeholder="Search Users" class="form-control mr-3">
                                 <a class="btn themeBtn pt-12px" data-toggle="modal" data-target="#invite">Invite User</a>
                               </div>
                   </div>

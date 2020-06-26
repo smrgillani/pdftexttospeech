@@ -46,7 +46,7 @@ return [
     'clickBank' =>
     [
         'baseLink'      => env('PRODUCT_BASE_LINK', 'https://audiogen.pay.clickbank.net/?cbitems='),
-        'pitchPageLink' => env('APP_PITCH_PAGE', 'https://audiorobot.net/cb2/selfRegister'),
+        'pitchPageLink' => env('APP_PITCH_PAGE', 'https://audiorobot.net/'),
     ],
 
 ];

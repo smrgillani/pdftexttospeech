@@ -16,12 +16,14 @@ class IsExist
      */
     public function handle($request, Closure $next)
     {
-        $user = User::whereEmail($request->cemail)->first();
-        if ($user) {
-
-            return redirect('login')->with('error', 'User Already Exist');
-
+        
+        $user=User::where('email',$request->email)->where('status','1')->whereNull('name')->whereNull('password')->first();
+        
+        if (empty($user)) {
+            return redirect('/login')->with('error', 'User Not Exists');
         }
+
         return $next($request);
+        
     }
 }

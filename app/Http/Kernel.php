@@ -35,6 +35,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            //\App\Http\Middleware\IsActive::class
         ],
 
         'api' => [
@@ -63,7 +64,8 @@ class Kernel extends HttpKernel
         'admin'            => \App\Http\Middleware\Admin::class,
         'isSubsriber'      => \App\Http\Middleware\IsSubsriber::class,
         'isExist'          => \App\Http\Middleware\IsExist::class,
-        'checkOrderStatus' => \App\Http\Middleware\CheckOrderStatus::class,
+        //'checkOrderStatus' => \App\Http\Middleware\CheckOrderStatus::class,
+        'isActive' => \App\Http\Middleware\IsActive::class,
     ];
 
     /**
@@ -81,6 +83,7 @@ class Kernel extends HttpKernel
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,
         \Illuminate\Auth\Middleware\IsSubsriber::class,
-        \App\Http\Middleware\CheckOrderStatus::class,
+        //\App\Http\Middleware\CheckOrderStatus::class,
+        \App\Http\Middleware\IsActive::class
     ];
 }

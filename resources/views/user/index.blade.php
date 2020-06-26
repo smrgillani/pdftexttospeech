@@ -44,8 +44,7 @@
                             <td><span class="text-{{ $user->status == 1 ? 'success':'warning' }}">{{ $user->status == 1 ? 'Active':'Inactive' }}</span></td>
                             <td>
                               <div class="d-flex">
-                                
-                                <a href="" class="mr-4 editbtn" data-toggle="modal" data-target="#editUser" data-userID="{{$user->id}}"  data-membershipID="{{$user->membership_id}}" data-status="{{$user->status}}"  data-name="{{$user->name}}">
+                                <a href="" class="mr-4 editbtn" data-toggle="modal" data-target="#editUser" data-userID="{{$user->id}}"  data-membershipID="{{$user->membership_id}}" data-status="{{$user->status}}"  data-name="{{$user->name}}" data-prodSku="{{$user->memberships->package->sku}}">
                                   <img src="{{asset('assets/img/edit.png')}}" data-toggle="tooltip" title="Edit" width="">
                                 </a>
                                 <a href="" class="mr-4 deletebtn" data-toggle="modal" data-target="#deleteUser" data-userID={{$user->id}}>
@@ -187,9 +186,9 @@
                 <div class="form-group">
                                 <label>Membership</label>
                                 <select class="form-control" id="membership_id" name="membership_id" required>
-                                    <option disabled selected>Choose Membership</option>  
+                                    <option disabled>Choose Membership</option>  
                                     @forelse($memberships as $membership)
-                                            <option value="{{$membership->id}}">{{$membership->name}}</option>
+                                            <option value="{{$membership->package->sku}}">{{$membership->package->title}}</option>
                                             @empty
                                     @endforelse                    
                                 </select>
@@ -469,6 +468,7 @@ $('body').on('click', '.editbtn',function(){
 	userStatus=parseInt(userStatus);
 
 	var membershipID= $(this).attr("data-membershipID");
+  var prodSku= $(this).attr("data-prodSku");
 
 	membershipID=parseInt(membershipID);
 
@@ -479,8 +479,9 @@ $('body').on('click', '.editbtn',function(){
 
 	$('#status option[value='+userStatus+']').attr('selected','selected');
 	
-	$('#membership_id option[value='+membershipID+']').attr('selected','selected');
+  $('#membership_id').val(prodSku);
 
+  console.log(membershipID);
 
 	// $('#membership_id').append('<option value="foo" selected="selected">Foo</option>');	
 });

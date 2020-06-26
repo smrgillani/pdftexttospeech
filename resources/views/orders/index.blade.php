@@ -18,7 +18,7 @@
                           <tr>
                             <th>Membership</th>
                             <th>User</th>
-                            <th>Operations</th>
+                            {{-- <th>Operations</th>--}}
                           </tr>
                         </thead>
                         <tbody>
@@ -30,7 +30,7 @@
 
 
 
-                            <td>
+                           {{-- <td>
                               <div class="d-flex">
 
                                 <a href="" class="mr-4 editbtn" data-toggle="modal" data-target="#editMembership" >
@@ -41,7 +41,7 @@
                                 </a>
 
                               </div>
-                            </td>
+                            </td> --}}
                           </tr>
                           @empty
                           <tr>

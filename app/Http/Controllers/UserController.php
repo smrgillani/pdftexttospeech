@@ -10,8 +10,15 @@ use App\User;
 use App\Membership;
 use Validator;
 use Auth;
+use App\Utilities\Helper;
 class UserController extends Controller
 {
+    private $helper;
+    public function __construct(Helper $helper)
+    {
+        $this->helper = $helper;
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -137,10 +144,21 @@ class UserController extends Controller
             if ($validator->fails()) {
           return response()->json(['error' => $validator], 200);
         }else{
+
+            $oldSku = $user->memberships->package->sku;
+            $newSku = $request->membership_id;
+
+            $receiptNum = $user->order->receipt_number;
+
+        if($oldSku != $newSku){
+
+            $this->helper->changeProduct($receiptNum, $oldSku, $newSku);
+
+        }
+
         $usr=$user->update([
             'name' => $request->name,
-            'status' => $request->status,
-            'membership_id' => $request->membership_id ? $request->membership_id : null,
+            'status' => $request->status
         ]);
    
         return $usr == true ? response()->json([

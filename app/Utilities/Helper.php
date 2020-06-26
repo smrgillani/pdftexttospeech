@@ -21,6 +21,31 @@ class Helper
         curl_setopt($ch, CURLOPT_URL, "https://api.clickbank.com/rest/1.3/products/{$data['sku']}?" . $queryString);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+        $headers   = array();
+        $headers[] = 'Authorization: DEV-6JV3FQGROH27F223599A0D37BHEJJ829:API-T4C75Q6ELOT4B9ANNHCC573J2IDQQDI3';
+        $headers[] = 'Content-Type: application/json';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+
+        curl_close($ch);
+        return $result;
+
+    }
+
+    public function changeProduct($receiptNum, $oldSku, $newSku)
+    {
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, "https://api.clickbank.com/rest/1.3/orders2/{$receiptNum}/changeProduct?newSku={$newSku}&oldSku={$oldSku}");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
         $headers   = array();
         $headers[] = 'Authorization: DEV-6JV3FQGROH27F223599A0D37BHEJJ829:API-T4C75Q6ELOT4B9ANNHCC573J2IDQQDI3';

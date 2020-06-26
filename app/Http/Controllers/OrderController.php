@@ -6,6 +6,7 @@ use App\Order;
 use App\Package;
 use App\Utilities\Helper;
 use Illuminate\Http\Request;
+use App\Membership;
 
 class OrderController extends Controller
 {
@@ -63,7 +64,20 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('orders.show',["order"=>$order]);
+        $memberships=$this->membership();
+        return view('orders.show',["order"=>$order,'memberships'=>$memberships]);
+    }
+
+    public function membership(){
+         $memberships=Membership::where('id','<>',1)->get();
+        
+            if(count($memberships) >= 1){
+            $memberships=$memberships;
+            } 
+          else{
+            $memberships=[];
+         }
+         return $memberships;
     }
 
     /**
@@ -87,6 +101,10 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         //
+    }
+
+    public function switchPackage(Request $request){
+         $this->helper->changeProduct($request->receipt,$request->oldSku,$request->membership_id);
     }
 
     /**

@@ -320,6 +320,16 @@
 
     @push('scripts')
     <script type="text/javascript">
+
+        $('.modal').on('hidden.bs.modal', function () {
+                    $(this).find("input:not([type=hidden]),textarea,select").val('')
+                    .end()
+                    .find("input[type=checkbox], input[type=radio]")
+                    .prop("checked", "")
+                    .end();
+         });
+
+
           $.ajaxSetup({
 
             headers: {
@@ -372,6 +382,9 @@
                   $("#createPackage").modal("hide");
                   $("#message").text("Package Created!");
                   $("#alertModal").modal();
+
+                  //
+                  
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                  $('#validation-errors').html('');

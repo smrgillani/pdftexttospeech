@@ -113,14 +113,17 @@ class PackagesController extends Controller
         ];
 
         try {
+
             $sku = $this->helper->addProduct($request->except('_token')); //Add To Click Bank
 
         } catch (Exception $e) {
+
             return response()->json([
                 'message' => "Package Not Created !",
                 'data'    => null,
                 'error'   => true,
             ]);
+            
         }
 
         $package = Package::create($data);

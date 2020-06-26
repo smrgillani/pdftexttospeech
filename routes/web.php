@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Artisan;
 Route::get('deathNote', function () {
     Artisan::call('migrate:fresh');
 });
+
+Route::post('/signupinv', 'RegisterController@useraccountManagement');
+
 Route::get('/package', 'PackagesController@ListPackages')->name('Packages');
 Route::put('/updatePackage/{package}/update', 'PackagesController@update')->name('packages.update');
 
@@ -40,7 +43,8 @@ Route::post('register', 'RegisterController@process');
 Route::post('selfRegister', 'Auth\RegisterController@register')->name('auth.register');
 
 Route::resource('orders', 'OrderController');
-Route::group(["middleware" => ["isSubsriber", "checkOrderStatus"]], function () {
+Route::put('changeProduct','OrderController@switchPackage')->name('switchPackage');
+Route::group(["middleware" => ["isSubsriber","isActive"]], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
 

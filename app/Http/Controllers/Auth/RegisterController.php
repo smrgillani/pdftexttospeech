@@ -52,7 +52,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name'     => ['required', 'string', 'max:255'],
-            'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email'    => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -65,19 +65,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        
-        $user = User::create([
-            'name'     => $data['name'],
-            'email'    => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-         // Mail::to($request->user())->send(new MembershipPurchased($order));
 
-        if ($user->can('create-order')) {
-            $package = Package::whereSku(request()->item)->first();
-            $user->order()->create(["receipt_number" => request()->cbreceipt, "membership_id" => $package->membership->id]);
-            $user->fill(["membership_id" => $package->membership->id])->save();
+        $user=User::where('email',$data['email'])->where('status','1')->first();
+        
+        if (empty($user)) {
+            
+            return redirect('/login')->with('error', 'User Not Exists');
+
+        }else{
+
+            $user->fill([
+                'name'     => $data['name'],
+                'password' => Hash::make($data['password']),
+            ])->save();
+
+            // if ($user->can('create-order')) {
+            //     $package = Package::whereSku(request()->item)->first();
+                
+            //     //$user->fill(["membership_id" => $package->membership->id])->save();
+            // }
+
+            return $user;
         }
-        return $user;
     }
 }

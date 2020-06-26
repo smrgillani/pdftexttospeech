@@ -15,8 +15,6 @@ class IsSubsriber
      */
     public function handle($request, Closure $next)
     {
-        return $request->user()->isSubscriber()
-        ? $next($request)
-        : redirect()->route('Packages');
+        return $request->user() != null ? $request->user()->isSubscriber() ? $next($request) : redirect()->route('login') : redirect()->route('login');
     }
 }
